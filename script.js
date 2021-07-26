@@ -1,0 +1,98 @@
+//Defining variables for time
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
+
+//Defining variables for display
+
+let displayHours = 0;
+let displayMinutes = 0;
+let displaySeconds = 0;
+
+let interval = null;
+
+//Hold status
+let status = "stopped";
+
+function stopWatch()
+{
+    seconds++;
+
+    if(seconds / 60 === 1){
+        seconds = 0;
+        minutes++;
+
+        if(minutes / 60 === 1){
+            minutes = 0;
+            hours++;
+        }
+    }
+//string value to add leading 0 to values
+if(seconds < 10){
+    displaySeconds = "0" + seconds.toString();
+}
+else{
+    displaySeconds = seconds;
+}
+
+if(minutes < 10){
+    displayMinutes = "0" + minutes.toString();
+}
+else{
+    displayMinutes = minutes;
+}
+
+if(hours < 10){
+    displayHours = "0" + hours.toString();
+}
+else{
+    displayHours = hours;
+}
+
+//display time
+    document.getElementById("display").innerHTML = displayHours + ":" + displayMinutes + ":" + displaySeconds;
+}
+
+
+
+function startStop(){
+    if(status === "stopped"){
+        //start stopwatch
+        interval = window.setInterval(stopWatch, 1000)
+        document.getElementById("startStop").innerHTML = "Stop";
+        status = "started";
+    }
+    else{
+        window.clearInterval(interval);
+        document.getElementById("startStop").innerHTML = "Resume";
+        status = "stopped";
+    }
+}
+
+function reset(){
+    window.clearInterval(interval);
+    seconds = 00;
+    minutes = 00;
+    hours = 00;
+    document.getElementById("display").innerHTML = "00:00:00";
+    document.getElementById("startStop").innerHTML = "Start";
+}
+
+function green(){
+    
+    let container = document.getElementById("green");
+    container.style.background = 'green';
+}
+
+function yellow(){
+    
+    let body = document.getElementById("yellow");
+    body.style.background = 'yellow';
+}
+
+function red(){
+    
+    let body = document.getElementById("red");
+    body.style.background = 'red';
+}
+
