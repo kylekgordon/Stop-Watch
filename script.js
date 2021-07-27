@@ -13,6 +13,7 @@ let interval = null;
 
 //Hold status
 let status = "stopped";
+let status1 = "unset";
 
 function stopWatch()
 {
@@ -76,23 +77,42 @@ function reset(){
     hours = 00;
     document.getElementById("display").innerHTML = "00:00:00";
     document.getElementById("startStop").innerHTML = "Start";
+    document.querySelector("body").style.background = "#FFFFFF";
 }
 
 function green(){
+    if(status1 === "unset"){
+       document.querySelector("body").style.background = "#00FF00";
+       status1 = "set";
+    }
+    else{
+        document.querySelector("body").style.background = "#FFFFFF";
+        status1 = "unset";
+    }
     
-    let container = document.getElementById("green");
-    container.style.background = 'green';
 }
 
 function yellow(){
+    if(status1 === "unset"){
+        document.querySelector("body").style.background = "#FFFF00";
+        status1 = "set";
+     }
+     else{
+         document.querySelector("body").style.background = "#FFFFFF";
+         status1 = "unset";
+     }
     
-    let body = document.getElementById("yellow");
-    body.style.background = 'yellow';
 }
 
 function red(){
+    if(status1 === "unset"){
+        document.querySelector("body").style.background = "#FF0000";
+        status1 = "set";
+     }
+     else{
+         document.querySelector("body").style.background = "#FFFFFF";
+         status1 = "unset";
+     }
     
-    let body = document.getElementById("red");
-    body.style.background = 'red';
 }
 

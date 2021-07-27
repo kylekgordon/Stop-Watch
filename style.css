@@ -10,13 +10,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   margin: 0;
 }
 
 .footer {
-  background-color: rgba(255, 255, 255, 0.692);
+  background-color: rgb(255, 255, 255);
   background-size: 20px;
   position: fixed;
   font-family: 'Roboto', sans-serif;
@@ -34,6 +34,7 @@ body {
 }
 
 #display {
+  border-radius: 50px;
   width: 100%;
   font-size: 80px;
   align-items: center;
