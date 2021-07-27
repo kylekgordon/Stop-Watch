@@ -13,7 +13,9 @@ let interval = null;
 
 //Hold status
 let status = "stopped";
-let status1 = "unset";
+let statusGreen = "unset";
+let statusYellow = "unset";
+let statusRed = "unset";
 
 function stopWatch()
 {
@@ -78,40 +80,50 @@ function reset(){
     document.getElementById("display").innerHTML = "00:00:00";
     document.getElementById("startStop").innerHTML = "Start";
     document.querySelector("body").style.background = "#FFFFFF";
+    status = "stopped";
+    statusGreen = "unset";
+    statusYellow = "unset";
+    statusRed = "unset";
 }
 
 function green(){
-    if(status1 === "unset"){
+    if(statusGreen === "unset"){
        document.querySelector("body").style.background = "#00FF00";
-       status1 = "set";
+       statusGreen = "set";
+       statusYellow = "unset";
+       statusRed = "unset";
     }
     else{
         document.querySelector("body").style.background = "#FFFFFF";
-        status1 = "unset";
+        statusGreen = "unset";
     }
     
 }
 
 function yellow(){
-    if(status1 === "unset"){
+    if(statusYellow === "unset"){
         document.querySelector("body").style.background = "#FFFF00";
-        status1 = "set";
+        statusYellow = "set";
+        statusGreen = "unset";
+        statusRed = "unset";
      }
      else{
          document.querySelector("body").style.background = "#FFFFFF";
-         status1 = "unset";
+         statusYellow = "unset";
      }
     
 }
 
 function red(){
-    if(status1 === "unset"){
+    if(statusRed === "unset"){
         document.querySelector("body").style.background = "#FF0000";
-        status1 = "set";
+        statusRed = "set";
+        statusGreen = "unset";
+        statusYellow = "unset";
      }
      else{
          document.querySelector("body").style.background = "#FFFFFF";
-         status1 = "unset";
+         statusRed = "unset";
      }
     
 }
