@@ -43,6 +43,7 @@ body {
 
 .buttons {
   width: 300px;
+  font-size: 30px;
   text-align: center;
   margin: 10px auto;
 }
@@ -50,7 +51,7 @@ body {
 .colorButtons {
   width: 300px;
   text-align: center;
-  margin: 10px auto;
+  margin: 20px auto;
 }
 
 .setColorIntervals {
